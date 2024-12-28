@@ -1,0 +1,24 @@
+/* .emergencies {
+} */
+.emergencies .title {
+  width: fit-content;
+  margin: 40px auto 60px;
+}
+.emergencies .content .top_nav {
+  display: flex;
+  border-bottom: 1px solid #7777;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+}
+.emergencies .content .top_nav h4 {
+  font-size: 20px;
+  padding: 3px 35px;
+  cursor: pointer;
+}
+.emergencies .content .box {
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

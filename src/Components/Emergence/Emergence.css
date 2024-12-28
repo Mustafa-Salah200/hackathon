@@ -1,0 +1,54 @@
+.emergence {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 9px;
+}
+.emergence:hover {
+    background-color: #f6f6f6;
+}
+.emergence .left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.emergence .icon  {
+    background-color: #D9D9D9;
+    height: 53px;
+    width: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 9px;
+}
+.emergence img {
+    width: 20px;
+}
+.emergence .emergence_content {
+    display: flex;
+    flex-direction: column;
+}
+.emergence .emergence_content h2 {
+    font-weight: normal;
+}
+.emergence .emergence_content .info {
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #4C4C4C;
+}
+.emergence .emergence_content .info div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.emergence .emergence_content .info div span {
+    font-size: 16px;
+}
+.emergence .status img {
+    width: 15px;
+    height: 15px;
+    margin-top: 5px;
+}

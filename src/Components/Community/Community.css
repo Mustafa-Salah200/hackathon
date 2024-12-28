@@ -1,0 +1,61 @@
+.community {
+    padding: 0 10px;
+}
+.community .title {
+    width: fit-content;
+    margin: 40px auto;
+}
+.community h2 {
+    margin: 40px 0;
+}
+.community .box{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+    cursor: pointer;
+}
+.community .box .left{
+    display: flex;
+    gap: 13px;
+}
+.community .box .image{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.community .box .image img{
+    width: 100%;
+    height: 100%;
+}
+.community .box .point{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+.community .box .point img {
+    width: 25px;
+}
+.community .box .point p {
+    font-weight: bold;
+}
+
+.community .box .right h1 {
+
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.community .box .right h1 {
+    background-color: #FFE0D4;
+    color: red;
+}
+.community .leaderBoard .box .right h1 {
+    background-color: #D4FFD5;
+    color: #0BDB11;
+}

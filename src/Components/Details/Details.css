@@ -1,0 +1,168 @@
+.details {
+  padding: 0 20px;
+  margin-bottom: 100px;
+}
+.details .top {
+  padding: 40px 0;
+  position: relative;
+  text-align: center;
+}
+.details .top h1 {
+  font-size: 23px;
+}
+.details .top svg {
+  position: absolute;
+  left: 0;
+  top: 41px;
+  width: 20px;
+  cursor: pointer;
+}
+.details .title,
+.details .category,
+.details .location {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.details .title .icon {
+  background-color: #d9d9d9;
+  width: 53px;
+  height: 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  margin-right: 10px;
+}
+.details .createdBy {
+  margin: 10px 0;
+  color: #c0c0c0;
+}
+.details .location div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #4c4c4c;
+}
+
+.details .description {
+  margin: 10px 0;
+}
+.details .google_map {
+  margin: 20px 0;
+}
+.details .google_map img {
+  width: 100%;
+}
+.details .seePhoto {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+  font-weight: bold;
+  gap: 10px;
+}
+.details .res-num {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  gap: 10px;
+  font-size: 20px;
+}
+.details .res-num img {
+  width: 20px;
+}
+.details .btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.details .btn button {
+  cursor: pointer;
+  padding: 10px 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.details .btn .respond {
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.details .btn button.dismiss {
+  background-color: #f4f0ef;
+  color: #333333;
+}
+.details .timeLine h2 {
+  margin: 30px 0;
+}
+.details .timeLine .timeline_box {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 45px;
+}
+.details .timeLine .timeline_box .image {
+    position: relative;
+}
+.details .timeLine .timeline_box img {
+  width: 30px;
+}
+.details .timeLine .timeline_box .image::before ,
+.details .timeLine .timeline_box .image::after {
+    position: absolute;
+    width: 2px;
+    content: "";
+    background-color: #543B3B;
+}
+.details .timeLine .timeline_box .image::before {
+    top: 34px;
+    left: 13px;
+    width: 2px;
+    height: 39px;
+}
+
+.details .timeLine .timeline_box .image::after {
+    top: 78px;
+    left: 13px;
+    height: 12px;
+}
+.details .timeLine .timeline_box h3 {
+  color: #4c4c4c;
+}
+.details .timeLine .timeline_box p {
+  margin-top: 10px;
+  color: #c0c0c0;
+}
+
+.details .responders h2 {
+  margin: 40px 0;
+}
+.details .responder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 20px 0;
+  color: #4c4c4c;
+}
+.details .responder .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.details .responder .image img {
+  width: 100%;
+  height: 100%;
+}
+.details .responder .info p {
+  color: #c0c0c0;
+}

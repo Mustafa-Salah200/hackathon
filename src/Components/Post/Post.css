@@ -1,0 +1,102 @@
+.post {
+    padding: 0 10px;
+    margin-bottom: 100px;
+}
+.post .title {
+    margin: 40px auto;
+    width: fit-content;
+}
+.post form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.post form .input {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.post form .input input,
+.post form .input textarea{
+    padding: 15px 20px;
+    border: 1px solid #E4E4E4;
+    border-radius: 10px;
+    outline: none;
+}
+.post form .input textarea {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 160px;
+    min-height: 160px;
+}
+.post form .input select {
+    border: 1px solid #E4E4E4;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    outline: none;
+    /* color: #E4E4E4; */
+}
+.post form .input label {
+    margin-left: 5px;
+}
+
+
+
+
+.post form .check {
+    display: flex;
+    gap: 10px;
+}
+.post form .submit {
+    width: 100%;
+}
+.post form .btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.post form .btn button ,
+.post form .submit {
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+.post form .btn button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #333333;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+.post form .submit {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 20px;
+}
+.post .file-upload {
+    display: inline-block;
+    color: #fff;
+    background-color: var(--primary-color);
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.post .file-upload input[type="file"] {
+    display: none;
+}
+.post .file-upload label {
+    cursor: pointer;
+}
