@@ -156,7 +156,7 @@ const Details = ({ data, setDetails }) => {
     console.log(userData.profile_picture);
   }, []);
   useEffect(() => {
-    const url = new URL("https://localhost:3333/.well-known/mercure");
+    const url = new URL("http://localhost:3333/.well-known/mercure");
     url.searchParams.append("topic", "/chat");
 
     const eventSource = new EventSource(url);
