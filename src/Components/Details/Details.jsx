@@ -92,13 +92,13 @@ const Details = ({ data, setDetails }) => {
   };
   const HandleCreateComment = async () => {
     if (createComment !== "") {
-      const ob = {
-        user: userInfo,
-        incident_id: data.id,
-        content: createComment,
-      };
-      console.log(Cookies.get("token"));
-      setCommentsArray([...commentsArray, ob]);
+      // const ob = {
+      //   user: userInfo,
+      //   incident_id: data.id,
+      //   content: createComment,
+      // };
+      //console.log(Cookies.get("token"));
+      //setCommentsArray([...commentsArray, ob]);
 
       const response = await fetch(
         `http://127.0.0.1:8000/api/incident/comment/`,
