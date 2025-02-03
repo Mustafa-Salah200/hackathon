@@ -9,6 +9,9 @@ nav {
     background-color: #fff;
     padding: 10px 30px;
     border-top: 1px solid #7777;
+    z-index: 100;
+    max-width: 470px;
+    margin: auto;
 }
 nav a {
     text-decoration: none;
@@ -17,6 +20,7 @@ nav a {
     align-items: center;
     gap: 10px;
     color: #000;
+    width: 70px;
 } 
 nav a.active path{
     stroke: red;

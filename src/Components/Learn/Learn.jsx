@@ -59,7 +59,6 @@ const GuideBox = ({ image, title, min }) => {
 const FeatureBox = ({ title, rate, text }) => {
   const [color, setColor] = useState(null);
   rate = rate * 1;
-  console.log(rate);
   useEffect(() => {
     if (rate <= 100 && rate >= 70) {
       setColor("#0BDB11");

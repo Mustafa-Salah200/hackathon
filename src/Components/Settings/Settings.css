@@ -1,0 +1,81 @@
+.settings {
+  padding: 0 20px;
+  margin-bottom: 100px;
+}
+.settings .title {
+  position: relative;
+  padding: 40px 0;
+  text-align: center;
+}
+.settings .title .back {
+  position: absolute;
+  left: 0;
+  font-size: 25px;
+  cursor: pointer;
+}
+.settings .darkMode {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.settings .darkMode p {
+  position: relative;
+  background-color: #d9d9d9;
+  width: 65px;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.settings .darkMode p span {
+  transition: 0.2s;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  display: block;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.settings ul {
+  list-style: none;
+}
+.settings ul li {
+  cursor: pointer;
+  display: flex;
+  margin: 30px 0;
+  align-items: center;
+  gap: 20px;
+}
+.settings ul li p {
+  color: #777;
+  font-weight: bold;
+}
+.settings ul li:hover p {
+  color: #000;
+  font-weight: bold;
+}
+.settings ul li button {
+  padding: 10px 15px;
+  margin-left: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+}
+.settings ul li img {
+  width: 45px;
+  background-color: #ff9898;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+.settings .showPage {
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #77777736;
+  /* z-index: 200; */
+}

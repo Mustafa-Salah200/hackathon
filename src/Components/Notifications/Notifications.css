@@ -1,0 +1,44 @@
+.notifications {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 300px;
+  margin: 100px auto 0;
+  padding: 20px;
+}
+.notifications .back {
+  cursor: pointer;
+}
+.notifications .back svg {
+  width: 20px;
+  height: 20px;
+}
+.notifications h2 {
+  margin: 20px 0;
+}
+.notifications .content div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notifications .content div h2 {
+    font-weight: normal;
+}
+.notifications .content p {
+    position: relative;
+    /* background-color: #D9D9D9; */
+    width: 65px;
+    height: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.notifications .content p span {
+    transition: 0.2s;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    display: block;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}

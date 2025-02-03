@@ -1,0 +1,104 @@
+.loginPage {
+  padding: 0 20px;
+  margin-bottom: 100px;
+}
+.loginPage .title {
+  text-align: center;
+  margin: 50px auto;
+}
+.loginPage .title h1 {
+  font-weight: normal;
+  color: #c4c4c4;
+}
+.loginPage .title h1:first-child {
+  font-weight: normal;
+  color: #000;
+}
+.loginPage form {
+  width: 340px;
+  margin: auto;
+}
+.loginPage form .input {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.loginPage form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #c4c4c4;
+  padding: 10px 0;
+  margin: 10px 0;
+  font-size: 17px;
+}
+.loginPage form .showPassword {
+  position: absolute;
+  right: 10px;
+  top: 36px;
+  cursor: pointer;
+  width: 26px;
+}
+.loginPage form button {
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 14px 0;
+  font-size: 16px;
+}
+.loginPage p {
+  margin: 20px 0;
+  text-align: center;
+}
+.loginPage .forget {
+  font-weight: bold;
+}
+.loginPage .signWith {
+  color: #c4c4c4;
+  position: relative;
+}
+.loginPage .signWith::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  top: 50%;
+  z-index: -1;
+}
+.loginPage .signWith p {
+  background-color: #fff;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+}
+.loginPage .footer {
+  margin-top: 30px;
+  text-align: center;
+}
+.loginPage .footer p {
+  color: #c4c4c4;
+  margin: 10px 0;
+}
+.loginPage .footer h3 {
+    cursor: pointer;
+}
+.loginPage .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.loginPage .icons img {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  cursor: pointer;
+}

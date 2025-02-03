@@ -1,78 +1,74 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react"
-
+import { createContext, useEffect, useState } from "react";
+import Cookies from "js-cookie";
 
 export const ContextProvider = createContext();
 
+const ContextApi = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [data, setData] = useState([]);
 
-const fakeData = [
-    {
-      "id": 1,
-      "title": "Fire Outbreak in Gizosi",
-      "category": "fire",
-      "createAt": "2020-12-29",
-      "level": "medium",
-      "description": "Large fire reported in a residential building.Multiple units affected.Immediate assistance required.",
-      "location": "Gisozi, Ruhango Market",
-      "time": "1:45pm",
-      "responders": [
-        { "name": "Winny", "type": "En route to the scene" },
-        { "name": "Mustafa", "type": "At the scene" },
-        { "name": "Musa", "type": "At the scene" }
-      ],
-      "status": "finished",
-      "type": "active",
-      "creator": "Willam Thomas",
-      "images": []
-    },
-    {
-      "id": 2,
-      "title": "Electric Wire Fault, Simba ...",
-      "category": "Electric",
-      "createAt": "2022-11-29",
-      "level": "medium",
-      "description": "Large fire reported in a residential building.Multiple units affected.Immediate assistance required.",
-      "location": "Gisozi, Ruhango Market",
-      "time": "1:45pm",
-      "responders": [
-        { "name": "Winny", "type": "En route to the scene" },
-        { "name": "Mustafa", "type": "At the scene" },
-        { "name": "Musa", "type": "At the scene" }
-      ],
-      "status": "finished",
-      "type": "inactive",
-      "creator": "Willam Thomas",
-      "images": []
-    },
-    {
-      "id": 3,
-      "title": "Woman in Labour, Kaciciru",
-      "category": "fire",
-      "createAt": "2020-12-29",
-      "level": "medium",
-      "description": "Large fire reported in a residential building.Multiple units affected.Immediate assistance required.",
-      "location": "Gisozi, Ruhango Market",
-      "time": "1:45pm",
-      "responders": [
-        { "name": "Winny", "type": "En route to the scene" },
-        { "name": "Mustafa", "type": "At the scene" },
-        { "name": "Musa", "type": "At the scene" }
-      ],
-      "status": "finished",
-      "type": "active",
-      "creator": "Willam Thomas",
-      "images": []
+  const [userDta, setUserData] = useState(null);
+
+  const UpdateUser = (newUser) => {
+    setUser(newUser);
+  };
+
+  useEffect(() => {
+    // Retrieve user data from localStorage
+    const storedUserData = localStorage.getItem("userData");
+
+    if (storedUserData) {
+      try {
+        const user = JSON.parse(storedUserData);
+        UpdateUser(storedUserData);
+      } catch (error) {
+        console.error("Failed to parse user data from localStorage", error);
+      }
+    } else {
+      console.warn("No user data found in localStorage");
     }
-  ]
-  
-const ContextApi = ({children}) => {
-    const [data,setData] = useState(fakeData)
-  return (
-    <ContextProvider.Provider value={{
-        data
-    }}>{children}</ContextProvider.Provider>
-  )
-}
+  }, []);
 
-export default ContextApi
+  const AddPost = (newPost) => {
+    setData((date) => [newPost, ...date]);
+  };
+
+  const UpdatePost = (newPost) => {
+    const newData = data.map((ele) => {
+      if (ele._id === newPost._id) {
+        return newPost;
+      }
+      return ele;
+    });
+    setData(newData);
+  };
+  useEffect(() => {
+    const FetchData = async () => {
+      // Abdo: made some changes here
+      const token = Cookies.get("token");
+      const response = await fetch("http://localhost:8000/api/incident/", {
+        method: "GET",
+        Autherization: `Bearer ${token}`,
+      });
+      const json = await response.json();
+      console.log("Json", json);
+      if (response.ok) {
+        setData(json);
+      } else {
+        throw new Error("Failed to fetch notes");
+      }
+    };
+    FetchData();
+  }, []);
+  return (
+    <ContextProvider.Provider
+      value={{ UpdateUser, user, data, AddPost, UpdatePost }}
+    >
+      {children}
+    </ContextProvider.Provider>
+  );
+};
+
+export default ContextApi;

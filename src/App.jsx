@@ -1,57 +1,66 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import Home from "./Components/Home/Home"
-import Login from "./Components/Login/Login"
-import Emergencies from "./Components/Emergencies/Emergencies"
-import Profile from "./Components/Profile/Profile"
-import Learn from "./Components/Learn/Learn"
-import Post from "./Components/Post/Post"
-import Community from "./Components/Community/Community"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Login from "./Components/Login/Login";
+import Emergencies from "./Components/Emergencies/Emergencies";
+import Profile from "./Components/Profile/Profile";
+import Learn from "./Components/Learn/Learn";
+import Post from "./Components/Post/Post";
+import Community from "./Components/Community/Community";
+import SignUp from "./Components/SignUp/SignUp";
+import Otp from "./Components/Otp/Otp";
+import Settings from "./Components/Settings/Settings";
 
 const App = () => {
-
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Home />,
       children: [
         {
           path: "/",
-          element: <Emergencies />
+          element: <Emergencies />,
         },
         {
-          path: 'profile',
-          element: <Profile />
+          path: "profile",
+          element: <Profile />,
         },
         {
-          path: 'learn',
-          element: <Learn/>
+          path: "learn",
+          element: <Learn />,
         },
         {
           path: "post",
-          element: <Post />
+          element: <Post />,
         },
         {
-          path: 'community',
-          element: <Community />
-        }
-      ]
-
+          path: "setting",
+          element: <Settings />,
+        },
+        {
+          path: "community",
+          element: <Community />,
+        },
+      ],
     },
     {
       path: "/login",
-      element: <Login />
+      element: <Login />,
     },
     {
-      path: "*",
-      element: <h3>error page</h3>
-    }
-  ])
+      path: "/signUp",
+      element: <SignUp />,
+    },
+    {
+      path: "/otp",
+      element: <Otp />,
+    },
+  ]);
 
   return (
-    <div>
+    <div className="">
       <RouterProvider router={router} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

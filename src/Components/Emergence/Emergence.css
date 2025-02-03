@@ -28,9 +28,13 @@
 .emergence .emergence_content {
     display: flex;
     flex-direction: column;
+    width: 290px;
 }
 .emergence .emergence_content h2 {
     font-weight: normal;
+    text-align: start;
+    font-size: 18px;
+    width: 235px;
 }
 .emergence .emergence_content .info {
     margin-top: 4px;

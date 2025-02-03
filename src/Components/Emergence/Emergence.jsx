@@ -6,6 +6,8 @@ import active from "../../assets/active.svg";
 import inactive from "../../assets/in_active.svg";
 
 import "./Emergence.css";
+import { useContext } from "react";
+import ContextApi from "../../context/ContextApi";
 const Emergence = ({ status, setDetails, data }) => {
   return (
     <div className="emergence" onClick={setDetails}>
@@ -15,15 +17,15 @@ const Emergence = ({ status, setDetails, data }) => {
         </div>
 
         <div className="emergence_content">
-          <h2 className="top">{data.title}</h2>
+          <h2 className="top">{data?.title}</h2>
           <div className="info">
             <div className="left">
               <img src={clock} alt="" />
-              <span>2:00pm</span>
+              <span>{data.time}</span>
             </div>
             <div className="right">
               <img src={hand} alt="" />
-              <span>3 responders</span>
+              <span>{data.responders?.length} responders</span>
             </div>
           </div>
         </div>

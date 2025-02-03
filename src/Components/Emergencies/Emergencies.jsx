@@ -10,7 +10,7 @@ const Emergencies = () => {
   const { data } = useContext(ContextProvider);
 
   return details ? (
-    <Details data={details} setDetails={setDetails}/>
+    <Details data={details} setDetails={setDetails} />
   ) : (
     <section className="emergencies">
       <h1 className="title">Emergencies</h1>
@@ -50,7 +50,7 @@ const Emergencies = () => {
           {data &&
             data.map((ele) => {
               if (active) {
-                if (ele.type === "active") {
+                if (ele.status === "active") {
                   return (
                     <Emergence
                       key={ele.id}
@@ -61,7 +61,7 @@ const Emergencies = () => {
                   );
                 }
               } else {
-                if (ele.type !== "active") {
+                if (ele.status !== "active") {
                   return (
                     <Emergence
                       key={ele.id}

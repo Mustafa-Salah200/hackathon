@@ -1,0 +1,332 @@
+.main {
+  padding: 0 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.main .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.main .main_logo {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+  align-items: center;
+}
+.main .main_logo span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+}
+.main .nav .btn {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.main button {
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 5px;
+}
+.main .nav button.signup {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.main .nav button.login {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.main .main_landing {
+  margin-top: 70px;
+  height: fit-content;
+  display: flex;
+  overflow: hidden;
+}
+
+.main .main_landing .left h1 {
+  color: var(--primary-color);
+  font-size: 56px;
+}
+.main .main_landing .left p {
+  margin: 20px 0;
+}
+.main .main_landing .left .btn {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.main .main_landing .left .btn button.login {
+  background-color: #333333;
+  color: #fff;
+}
+.main .main_landing .left .btn button.signup {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: #fff;
+}
+.main .main_landing .left .info {
+  margin: 20px 0;
+}
+.main .main_landing .right img {
+  width: 300px;
+  display: none;
+}
+
+.main .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+  margin: 50px auto;
+  flex-wrap: wrap;
+}
+.main .icons img {
+  width: 70px;
+}
+
+.main .about {
+  display: flex;
+  gap: 70px;
+  flex-wrap: wrap-reverse;
+}
+.main .about img {
+  width: 100%;
+  max-width: 400px;
+}
+.main .about .info {
+  width: 100%;
+  width: 400px;
+}
+.main .about .info p {
+  font-size: 17px;
+  margin: 30px 0;
+}
+.main .about .info .btn {
+  display: flex;
+  gap: 20px;
+}
+.main .about .info .btn button {
+  border-radius: 4px;
+}
+.main .about .info .btn button.work {
+  background-color: var(--primary-color);
+  color: #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.main .about .info .btn button.join {
+  background-color: #f0f0f2;
+  color: #000;
+}
+.main .impact {
+  margin-top: 100px;
+}
+.main .impact .top h2 {
+  margin: 20px 0;
+}
+.main .impact .top h3 {
+  font-weight: normal;
+}
+.main .impact .bottom {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.main .impact .bottom h2 {
+  color: var(--primary-color);
+  margin: 10px 0;
+}
+
+.main .feature {
+  margin: 100px 0;
+}
+.main .feature .title {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.main .feature .title p {
+  margin: 20px;
+}
+.main .feature .content {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap-reverse;
+}
+.main .feature .content .left img {
+  max-width: 400px;
+  width: 100%;
+}
+.main .feature .content .right {
+  width: 100%;
+  width: 400px;
+}
+.main .feature .content .right p {
+  display: flex;
+  gap: 25px;
+  margin: 40px 0;
+  align-items: center;
+}
+.main .feature .content .right p span {
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .community .title {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.main .community .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.main .community .content .box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  box-shadow: 0 0 1px 2px #eee;
+  padding: 20px;
+  border-radius: 4px;
+}
+.main .community .content .box img {
+  width: 30px;
+}
+.main .community .content .box q {
+  margin: 20px 0 10px;
+}
+.main .team {
+  margin-top: 100px;
+}
+.main .team .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.main .team .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.main .team .content .box {
+  width: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 60px;
+}
+.main .team .content .box h2 {
+  font-size: 20px;
+}
+.main .team .content .box .image {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-color: #eee;
+}
+
+.main .news {
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  color: #fff;
+  gap: 100px;
+  margin: 100px 0;
+  flex-wrap: wrap;
+}
+.main .news .left p {
+  margin-top: 20px;
+  font-weight: normal;
+  color: #eee;
+}
+.main .news .right {
+  display: flex;
+  height: 50px;
+}
+.main .news .right button {
+  border-radius: 0;
+  border: none;
+  height: 100%;
+  padding: 10px 0;
+  width: 86px;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.main .news .right input {
+  height: 100%;
+  width: 150px;
+}
+.main footer .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.main footer .left p {
+  margin-top: 20px;
+}
+.main footer .right {
+  display: flex;
+  gap: 30px;
+}
+.main footer .right button.signup {
+  background-color: var(--primary-color);
+  color: #ffff;
+  font-weight: bold;
+}
+.main footer .right button.login {
+  border: 1px solid #000;
+  background-color: #fff;
+}
+.main footer .bottom {
+  text-align: center;
+  padding: 30px;
+}
+@media (min-width: 768px) {
+  .main .main_landing {
+    height: 343px;
+    gap: 40px;
+  }
+  .main .main_landing .right img{
+    display: block;
+  }
+  .main .about ,
+  .main .feature .content ,
+  .main .news {
+    flex-wrap: nowrap;
+  }
+  .main button {
+    font-weight: bold;
+    padding: 10px 15px;
+  }
+}

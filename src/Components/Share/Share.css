@@ -1,0 +1,33 @@
+.share {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 300px;
+  margin: 100px auto 0;
+  padding: 20px;
+}
+.share .back {
+  cursor: pointer;
+}
+.share .back svg {
+  width: 20px;
+  height: 20px;
+}
+.share h2 {
+  margin: 20px 0;
+}
+.share h3 {
+  margin: 10px 0;
+  font-weight: normal;
+}
+
+.share .icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 0;
+}
+.share .icons img {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}

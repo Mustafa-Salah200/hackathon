@@ -1,9 +1,17 @@
+@import "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  scroll-behavior: smooth;
+
 }
 :root {
-  --primary-color: #E51B1B;
+  --primary-color: #e51b1b;
+}
+.container {
+  max-width: 470px;
+  margin: auto;
 }
