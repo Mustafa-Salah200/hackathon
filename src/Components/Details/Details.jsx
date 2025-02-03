@@ -156,14 +156,20 @@ const Details = ({ data, setDetails }) => {
     console.log(userData.profile_picture);
   }, []);
   useEffect(() => {
-    const url = new URL("http://localhost:3333/.well-known/mercure");
+    const url = new URL("http://127.0.0.1:3333/.well-known/mercure");
     url.searchParams.append("topic", "/chat");
 
     const eventSource = new EventSource(url);
     eventSource.onmessage = (event) => {
+      console.log("SS event:", event);
       console.log("Received event:", event.data);
       const newComment = JSON.parse(event.data);
       setCommentsArray([...commentsArray, newComment]);
+    };
+
+      // Cleanup: close the EventSource connection when the component unmounts
+    return () => {
+      eventSource.close();
     };
   });
   return (
