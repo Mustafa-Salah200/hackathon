@@ -27,16 +27,17 @@ const Details = ({ data, setDetails }) => {
   const [userInfo, setUserInfo] = useState();
 
   const HandleActive = async () => {
-    active === "active" ? setActive("inactive") : setActive("active");
-    const response = await fetch(`http://localhost:8000/api/incident/1/`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        type: active === "active" ? "inactive" : "active",
-      }),
-    });
+    incident_status === "active" ? setActive("inactive") : setActive("active");
+    const response = await fetch(
+      `http://localhost:8000/api/incident/status/${data.id}/`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${Cookies.get("token")}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
     const json = await response.json();
     if (response.ok) {
       UpdatePost(json.data);
@@ -167,7 +168,7 @@ const Details = ({ data, setDetails }) => {
       setCommentsArray([...commentsArray, newComment]);
     };
 
-      // Cleanup: close the EventSource connection when the component unmounts
+    // Cleanup: close the EventSource connection when the component unmounts
     return () => {
       eventSource.close();
     };
