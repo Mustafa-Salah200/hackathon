@@ -12,7 +12,9 @@ import Feedback from "../FeedbackForm/Feedback";
 import Notifications from "../Notifications/Notifications";
 import Security from "../Security/Security";
 import Share from "../Share/Share";
+import { useNavigate } from "react-router-dom";
 import { ContextProvider } from "../../context/ContextApi";
+import Cookies from "js-cookie";
 
 const Settings = ({ setSettings }) => {
   const [dark, setDark] = useState(false);
@@ -21,8 +23,31 @@ const Settings = ({ setSettings }) => {
   const [active, setActive] = useState(2);
 
   const [pageName, setPageName] = useState("");
-  const {UpdateUser} = useContext(ContextProvider)
+  const { UpdateUser } = useContext(ContextProvider);
+  // Hooks
+  const navigate = useNavigate();
 
+  const handleLogout = async () => {
+    // Endpoint: http://127.0.0.1:8000/auth/account/logout/
+
+    const token = Cookies.get("token");
+    if (token != undefined) {
+      const response = await fetch(
+        "http://127.0.0.1:8000/auth/account/logout/",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        Cookies.remove("token");
+        navigate("/login");
+      }
+    }
+  };
   const HandlePage = (name) => {
     setPageName(name);
     setShowPage(true);
@@ -77,7 +102,7 @@ const Settings = ({ setSettings }) => {
         </li>
         <li>
           <img src={logout} alt="" />
-          <p onClick={()=> UpdateUser(null)}>Log Out</p>
+          <p onClick={() => handleLogout()}>Log Out</p>
         </li>
       </ul>
 
@@ -89,13 +114,17 @@ const Settings = ({ setSettings }) => {
               setShowPage={() => setShowPage(false)}
               setActive={setActive}
               active={active}
-
             />
+          ) : pageName === "help" ? (
+            <Feedback setShowPage={() => setShowPage(false)} />
+          ) : pageName === "notifications" ? (
+            <Notifications setShowPage={() => setShowPage(false)} />
+          ) : pageName === "security" ? (
+            <Security setShowPage={() => setShowPage(false)} />
           ) : (
-            pageName === "help" ? <Feedback setShowPage={() => setShowPage(false)}/> :
-            pageName === "notifications" ? <Notifications setShowPage={() => setShowPage(false)}/> :
-            pageName === "security" ? <Security setShowPage={() => setShowPage(false)}/> :
-            pageName === "share" && <Share setShowPage={() => setShowPage(false)}/>
+            pageName === "share" && (
+              <Share setShowPage={() => setShowPage(false)} />
+            )
           )}
         </div>
       )}

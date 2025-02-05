@@ -9,6 +9,8 @@ const Emergencies = () => {
   const [details, setDetails] = useState(null);
   const { data } = useContext(ContextProvider);
 
+  console.log(data);
+
   return details ? (
     <Details data={details} setDetails={setDetails} />
   ) : (
