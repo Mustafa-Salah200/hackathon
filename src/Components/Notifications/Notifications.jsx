@@ -3,7 +3,8 @@ import { useState } from "react";
 import "./Notifications.css";
 const Notifications = ({ setShowPage }) => {
   const [sms, setSms] = useState(false);
-  const [email, setEmail] = useState(false);
+  // const [email, setEmail] = useState(false);
+  const [pushNotification, setpushNotification] = useState(false);
   return (
     <div className="notifications">
       <div className="header">
@@ -25,17 +26,18 @@ const Notifications = ({ setShowPage }) => {
       <div className="content">
         <div className="">
           <h2>SMS</h2>
-          <p onClick={() => setSms(!sms)}
+          <p
+            onClick={() => setSms(!sms)}
             style={
-                sms
-                  ? {
-                      backgroundColor: "#D9D9D9",
-                    }
-                  : {
+              sms
+                ? {
+                    backgroundColor: "#D9D9D9",
+                  }
+                : {
                     backgroundColor: "#333",
-                    }
-              }
-            >
+                  }
+            }
+          >
             <span
               style={
                 sms
@@ -50,22 +52,51 @@ const Notifications = ({ setShowPage }) => {
           </p>
         </div>
 
-        <div className="">
+        {/* <div className="">
           <h2>Email</h2>
-          <p onClick={() => setEmail(!email)}
-            
+          <p
+            onClick={() => setEmail(!email)}
             style={
-                email
-                  ? {
-                      backgroundColor: "#D9D9D9",
-                    }
-                  : {
+              email
+                ? {
+                    backgroundColor: "#D9D9D9",
+                  }
+                : {
                     backgroundColor: "#333",
-                    }
-              }>
+                  }
+            }
+          >
             <span
               style={
                 email
+                  ? {
+                      left: "5px",
+                    }
+                  : {
+                      left: "35px",
+                    }
+              }
+            ></span>
+          </p>
+        </div> */}
+
+        <div className="">
+          <h2>Push Notification</h2>
+          <p
+            onClick={() => setpushNotification(!pushNotification)}
+            style={
+              pushNotification
+                ? {
+                    backgroundColor: "#D9D9D9",
+                  }
+                : {
+                    backgroundColor: "#333",
+                  }
+            }
+          >
+            <span
+              style={
+                pushNotification
                   ? {
                       left: "5px",
                     }
