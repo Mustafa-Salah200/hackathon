@@ -15,6 +15,7 @@ import Share from "../Share/Share";
 import { useNavigate } from "react-router-dom";
 import { ContextProvider } from "../../context/ContextApi";
 import Cookies from "js-cookie";
+import { main } from "../../../public/main.js";
 
 const Settings = ({ setSettings }) => {
   // Notification related
@@ -68,7 +69,9 @@ const Settings = ({ setSettings }) => {
 
         if (response.ok) {
           const data = await response.json();
+          console.log(data);
           if (data[1].channel.name == "SMS") {
+            console.log(data);
             console.log("Channel is SMS");
             console.log("SMS before: ", sms);
             setSms(data[1].enabled);
