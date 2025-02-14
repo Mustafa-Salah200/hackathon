@@ -16,11 +16,14 @@ function urlB64ToUint8Array(base64String) {
 
 // The endpoint for sending subscription information is: http://127.0.0.1:8000/notification/webpush/subscribe/
 const saveSubscription = async (subscription) => {
-  const response = await fetch("/webpush/subscribe/", {
+  const url = "http://127.0.0.1:8000/notification/subscription/info/";
+  console.log(subscription);
+  const response = await fetch(url, {
     method: "post",
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(subscription),
   });
+  console.log(subscription);
 
   return response.json();
 };

@@ -15,7 +15,6 @@ import Share from "../Share/Share";
 import { useNavigate } from "react-router-dom";
 import { ContextProvider } from "../../context/ContextApi";
 import Cookies from "js-cookie";
-import { main } from "../../../public/main.js";
 
 const Settings = ({ setSettings }) => {
   // Notification related

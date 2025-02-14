@@ -13,7 +13,7 @@ const checkPermission = () => {
 
 const registerSW = async () => {
   const registration = await navigator.serviceWorker.register(
-    "/static/js/service-worker.js"
+    "./service-worker.js"
   );
   return registration;
 };
@@ -24,7 +24,7 @@ const requestNotificationPermission = async () => {
     throw new Error("Notification Permission not granted");
 };
 
-const main = async () => {
+export const main = async () => {
   checkPermission();
   await requestNotificationPermission();
   await registerSW();

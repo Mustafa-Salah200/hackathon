@@ -1,14 +1,20 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./Notifications.css";
+
+import { main } from "../../main";
 const Notifications = ({ setShowPage }) => {
   const [sms, setSms] = useState(false);
   // const [email, setEmail] = useState(false);
   const [pushNotification, setpushNotification] = useState(false);
 
-  // const updatePreference = async () => {
-  //   console.log("Updating user preference")
-  // }
+  const updatePreference = async (name) => {
+    console.log("Updating user preference");
+    if (name == "Push") {
+      console.log("Push is being enabled");
+      await main();
+    }
+  };
 
   return (
     <div className="notifications">
@@ -88,7 +94,7 @@ const Notifications = ({ setShowPage }) => {
         <div className="">
           <h2>Push Notification</h2>
           <p
-            onClick={() => setpushNotification(!pushNotification)}
+            onClick={() => updatePreference("Push")}
             style={
               pushNotification
                 ? {
