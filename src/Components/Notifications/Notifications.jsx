@@ -5,6 +5,11 @@ const Notifications = ({ setShowPage }) => {
   const [sms, setSms] = useState(false);
   // const [email, setEmail] = useState(false);
   const [pushNotification, setpushNotification] = useState(false);
+
+  const updatePreference = async (id) => {
+    console.log("Updating user preference");
+  };
+
   return (
     <div className="notifications">
       <div className="header">
@@ -27,7 +32,7 @@ const Notifications = ({ setShowPage }) => {
         <div className="">
           <h2>SMS</h2>
           <p
-            onClick={() => setSms(!sms)}
+            onClick={() => updatePreference(1)}
             style={
               sms
                 ? {
@@ -83,7 +88,7 @@ const Notifications = ({ setShowPage }) => {
         <div className="">
           <h2>Push Notification</h2>
           <p
-            onClick={() => setpushNotification(!pushNotification)}
+            onClick={() => updatePreference(1)}
             style={
               pushNotification
                 ? {

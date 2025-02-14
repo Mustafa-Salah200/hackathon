@@ -17,6 +17,11 @@ import { ContextProvider } from "../../context/ContextApi";
 import Cookies from "js-cookie";
 
 const Settings = ({ setSettings }) => {
+  // Notification related
+  const [sms, setSms] = useState(false);
+  // const [email, setEmail] = useState(false);
+  const [pushNotification, setpushNotification] = useState(false);
+  //
   const [dark, setDark] = useState(false);
   const [showPage, setShowPage] = useState(false);
   const [lang, setLang] = useState("English");
@@ -48,9 +53,60 @@ const Settings = ({ setSettings }) => {
       }
     }
   };
-  const HandlePage = (name) => {
+
+  const GetUserPreference = async (name) => {
     setPageName(name);
     setShowPage(true);
+    if (name === "notifications") {
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:8000/notification/preference/",
+          {
+            method: "GET", // GET request
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          if (data[1].channel.name == "SMS") {
+            console.log("Channel is SMS");
+            console.log("SMS before: ", sms);
+            setSms(data[1].enabled);
+            console.log(data[1].enabled);
+            console.log("SMS after: ", sms);
+          }
+
+          //console.log("Notifications Preferences:", data); // Handle the response data
+        } else {
+          console.error("Failed to fetch notifications");
+        }
+      } catch (error) {
+        console.error("Error fetching notifications:", error);
+      }
+    }
+  };
+  const HandlePage = async (name) => {
+    setPageName(name);
+    setShowPage(true);
+    if (page === "notifications") {
+      try {
+        const response = await fetch(
+          "http://127.0.0.1:8000/notification/preference/",
+          {
+            method: "GET", // GET request
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log("Notifications data:", data); // Handle the response data
+        } else {
+          console.error("Failed to fetch notifications");
+        }
+      } catch (error) {
+        console.error("Error fetching notifications:", error);
+      }
+    }
   };
   return (
     <div className="settings">
@@ -84,7 +140,7 @@ const Settings = ({ setSettings }) => {
           <p>Language</p>
           <button>{lang}</button>
         </li>
-        <li onClick={() => HandlePage("notifications")}>
+        <li onClick={() => GetUserPreference("notifications")}>
           <img src={notification} alt="" />
           <p>Notifications</p>
         </li>
@@ -94,7 +150,7 @@ const Settings = ({ setSettings }) => {
         </li>
         <li onClick={() => HandlePage("help")}>
           <img src={help} alt="" />
-          <p>help And Feedback</p>
+          <p>Help And Feedback</p>
         </li>
         <li onClick={() => HandlePage("share")}>
           <img src={share} alt="" />
